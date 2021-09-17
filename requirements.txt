@@ -29,7 +29,6 @@ Markdown==3.3.4
 matplotlib==2.2.5
 networkx==2.5
 numpy==1.18.1
-nvdiffrast==0.2.5
 olefile==0.46
 opencv-python==3.4.9.33
 opt-einsum==3.3.0

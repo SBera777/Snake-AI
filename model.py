@@ -25,13 +25,14 @@ class Linear_QNet(nn.Module):
         torch.save(self.state_dict(), file_name)
 
     def load(self, file_name='model-old.pth'):
+        device = torch.device('cpu')
         model_folder_path = './model'
         if not os.path.exists(model_folder_path):
             os.makedirs(model_folder_path)
 
         file_name = os.path.join(model_folder_path, file_name)
         current_model_dict = self.state_dict()
-        loaded_state_dict = torch.load(file_name)
+        loaded_state_dict = torch.load(file_name, map_location=device)
         new_state_dict = {k: v if v.size() == current_model_dict[k].size() else current_model_dict[k] for k, v in
                           zip(current_model_dict.keys(), loaded_state_dict.values())}
         self.load_state_dict(new_state_dict, strict=False)
