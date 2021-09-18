@@ -1,5 +1,0 @@
-Train on small, then go big = Implemented
-code to penalize loops = Implemented
-once you have some trained model , no need to explore first
-CNN ? (-1,0,1 matrix and give as input , another variable state2 ) : Better info in input
-Better CUDA utilization if used
